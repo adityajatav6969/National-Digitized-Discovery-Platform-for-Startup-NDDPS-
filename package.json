@@ -1,0 +1,22 @@
+{
+  "name": "national-digitized-discovery-platform-startup",
+  "version": "1.0.0",
+  "description": "National Digitized Discovery Platform for Startup (Project ID: 2026-27-WD-04)",
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "server": "cd backend && npm start",
+    "server:dev": "cd backend && npm run dev",
+    "client": "cd frontend && npm run dev",
+    "seed": "cd backend && npm run seed"
+  },
+  "keywords": [
+    "mern",
+    "startup-discovery",
+    "final-year-project",
+    "react",
+    "express",
+    "mongodb"
+  ],
+  "author": "Team NDDPS (Aditya, Arjun, Arushi, Anushri)",
+  "license": "ISC"
+}
