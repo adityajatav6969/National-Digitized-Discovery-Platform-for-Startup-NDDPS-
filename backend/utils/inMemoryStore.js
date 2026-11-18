@@ -35,12 +35,12 @@ function initialize() {
     updatedAt: new Date().toISOString(),
   }));
 
-  // Seed startups with owner
+  // Seed startups with owner (Assign only the 1st startup to demo user Rahul 'u2', rest to other external founders)
   const startupUser = store.users.find((u) => u.role === 'startup');
   store.startups = startups.map((s, i) => ({
     ...s,
     _id: `s${i + 1}`,
-    owner: startupUser ? startupUser._id : 'u2',
+    owner: i === 0 ? (startupUser ? startupUser._id : 'u2') : `ext_founder_${i + 1}`,
     matchedSchemes: [],
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
