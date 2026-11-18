@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { getPendingStartups, verifyStartup } from '../services/api';
-import { Shield, CheckCircle, XCircle, Clock, Building2, Loader2 } from 'lucide-react';
+import { Shield, CheckCircle, XCircle, Clock, Building2, Loader2, Eye, ExternalLink } from 'lucide-react';
 
 const Toast = ({ message, type, onDismiss }) => {
   useEffect(() => {
@@ -204,7 +204,19 @@ const AdminPage = () => {
                       <React.Fragment key={sid}>
                         <tr className="hover:bg-gray-50 transition">
                           <td className="py-3 px-4 font-medium text-gray-900 whitespace-nowrap">
-                            {startup.name}
+                            <Link
+                              to={`/startup/${sid}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-700 hover:text-blue-900 hover:underline inline-flex items-center gap-1.5 font-bold group"
+                              title="Click to view full startup profile in new tab"
+                            >
+                              <span>{startup.name}</span>
+                              <ExternalLink className="h-3.5 w-3.5 text-blue-500 group-hover:text-blue-700 transition" />
+                            </Link>
+                            {startup.tagline && (
+                              <p className="text-xs text-gray-500 font-normal truncate max-w-xs">{startup.tagline}</p>
+                            )}
                           </td>
                           <td className="py-3 px-4 text-gray-600 whitespace-nowrap">
                             <span className="inline-block px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 text-xs font-medium">
@@ -219,7 +231,7 @@ const AdminPage = () => {
                           <td className="py-3 px-4 text-gray-600 whitespace-nowrap">
                             {startup.foundedYear || '—'}
                           </td>
-                          <td className="py-3 px-4 text-gray-600 whitespace-nowrap">
+                          <td className="py-3 px-4 text-gray-600 whitespace-nowrap font-mono text-xs">
                             {startup.dpiitNumber || '—'}
                           </td>
                           <td className="py-3 px-4 text-gray-600 whitespace-nowrap">
@@ -233,6 +245,15 @@ const AdminPage = () => {
                           </td>
                           <td className="py-3 px-4 whitespace-nowrap">
                             <div className="flex items-center justify-center gap-2">
+                              <Link
+                                to={`/startup/${sid}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold rounded-lg bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200 transition"
+                                title="Inspect Full Profile"
+                              >
+                                <Eye className="h-3.5 w-3.5" /> View
+                              </Link>
                               <button
                                 onClick={() => handleActionClick(sid, 'Approved')}
                                 disabled={processing === sid}
