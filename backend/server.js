@@ -1,3 +1,8 @@
+const dns = require('dns');
+try {
+  dns.setServers(['8.8.8.8', '1.1.1.1']);
+} catch (e) {}
+
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -26,7 +31,7 @@ app.get('/api/health', (req, res) => {
   res.json({
     status: 'online',
     project: 'National Digitized Discovery Platform for Startup (2026-27-WD-04)',
-    databaseMode: global.useInMemory ? 'In-Memory Store (Active Fallback)' : 'MongoDB Connected',
+    databaseMode: global.useInMemory ? 'In-Memory Store (Active Fallback)' : 'MongoDB Atlas (Connected)',
     timestamp: new Date().toISOString(),
   });
 });
@@ -55,11 +60,11 @@ const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/startup_di
 // Connect Database with Graceful In-Memory Fallback
 const startServer = async () => {
   try {
-    console.log('Attempting MongoDB connection...');
+    console.log('Attempting MongoDB Atlas connection...');
     await mongoose.connect(MONGO_URI, {
-      serverSelectionTimeoutMS: 2500,
+      serverSelectionTimeoutMS: 10000,
     });
-    console.log('✅ Connected to MongoDB successfully.');
+    console.log('✅ Connected to MongoDB Atlas successfully.');
     global.useInMemory = false;
 
     // Check if initial seeding needed
@@ -84,24 +89,25 @@ const startServer = async () => {
       );
       await Scheme.insertMany(schemes);
       const startupUser = createdUsers.find((u) => u.role === 'startup') || createdUsers[0];
-      const startupsWithOwner = startups.map((s) => ({
+      const adminUser = createdUsers.find((u) => u.role === 'admin') || createdUsers[0];
+      const startupsWithOwner = startups.map((s, idx) => ({
         ...s,
-        owner: startupUser._id,
+        owner: idx === 0 ? startupUser._id : adminUser._id,
       }));
       await Startup.insertMany(startupsWithOwner);
       await Resource.insertMany(resources);
-      console.log('✅ Auto-seed completed successfully in MongoDB.');
+      console.log('✅ Auto-seed completed successfully in MongoDB Atlas.');
     }
   } catch (err) {
     global.useInMemory = true;
-    console.warn('⚠️  MongoDB connection failed / timed out.');
+    console.warn('⚠️  MongoDB connection failed / timed out:', err.message);
     console.warn('⚡ ACTIVATING IN-MEMORY DATA STORE FALLBACK.');
     console.log('✅ All APIs (Search, Filter, Auth, CRUD, Admin Moderation, Analytics) are 100% operational in-memory.');
   }
 
   app.listen(PORT, () => {
     console.log(`🚀 NDDPS Backend running on http://localhost:${PORT}`);
-    console.log(`📡 Mode: ${global.useInMemory ? 'IN-MEMORY STORE' : 'MONGODB'}`);
+    console.log(`📡 Database Mode: ${global.useInMemory ? 'IN-MEMORY STORE' : 'MONGODB ATLAS CLOUD'}`);
   });
 };
 
