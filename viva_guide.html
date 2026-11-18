@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NDDPS Final Year Project Guide - Team Viva Manual</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 16mm 18mm 16mm;
+      @bottom-right {
+        content: counter(page);
+      }
+    }
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.5;
+      font-size: 10.5pt;
+      margin: 0;
+      padding: 0;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .no-break {
+      page-break-inside: avoid;
+    }
+    .header-box {
+      background: linear-gradient(135deg, #1e3a8a, #1e40af, #312e81);
+      color: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    }
+    .header-box h1 {
+      margin: 0 0 6px 0;
+      font-size: 20pt;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .header-box p {
+      margin: 4px 0;
+      font-size: 10pt;
+      color: #bfdbfe;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: #f59e0b;
+      color: #1e3a8a;
+      margin-right: 6px;
+    }
+    h2 {
+      color: #1e3a8a;
+      font-size: 14pt;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin-top: 20px;
+      margin-bottom: 12px;
+    }
+    h3 {
+      color: #0f172a;
+      font-size: 11.5pt;
+      margin-top: 14px;
+      margin-bottom: 6px;
+    }
+    .member-card {
+      border: 1px solid #cbd5e1;
+      border-left: 6px solid #2563eb;
+      background: #f8fafc;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 18px;
+    }
+    .member-title {
+      font-size: 14pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      margin: 0 0 4px 0;
+    }
+    .member-subtitle {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 16px 0;
+      font-size: 9.5pt;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 6px 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f1f5f9;
+      color: #1e293b;
+      font-weight: 700;
+    }
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    .qna-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+    }
+    .question {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 10pt;
+      margin-bottom: 4px;
+    }
+    .answer {
+      color: #334155;
+      font-size: 9.5pt;
+      margin: 0;
+    }
+    .pitch-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 10px 14px;
+      margin: 12px 0;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      font-size: 9.5pt;
+      color: #1e40af;
+    }
+    .tag {
+      background: #e2e8f0;
+      color: #334155;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 8.5pt;
+    }
+    ul, ol {
+      margin: 6px 0 10px 0;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+    .code-block {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+      font-size: 8.5pt;
+      margin: 8px 0;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- COVER / HEADER -->
+  <div class="header-box">
+    <div>
+      <span class="badge">Final Year Project 2026-27</span>
+      <span class="badge" style="background:#10b981; color:#ffffff;">Phase 1 Viva Manual</span>
+    </div>
+    <h1 style="margin-top:10px;">National Digitized Discovery Platform for Startup (NDDPS)</h1>
+    <p><strong>Project ID:</strong> 2026-27-WD-04 | <strong>Tech Stack:</strong> MERN (MongoDB, Express.js, React.js, Node.js) + Tailwind CSS + JWT</p>
+    <p><strong>Live Demo URLs:</strong> Frontend: <code>http://localhost:5173</code> | Backend: <code>http://localhost:5000</code></p>
+    <p><strong>GitHub:</strong> <code>https://github.com/adityajatav6969/National-Digitized-Discovery-Platform-for-Startup-NDDPS-</code></p>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="no-break">
+    <h2>1. Executive Summary & Problem-Solution Overview</h2>
+    <p>
+      <strong>Problem Statement:</strong> India is home to 100,000+ startups, and the Government of India (DPIIT, MeitY, DST, SIDBI) offers 50+ funding grants, subsidies, and incubation schemes. However, founders struggle with fragmented information, unvetted registries, and lack of awareness of which schemes their startup is actually eligible for.
+    </p>
+    <p>
+      <strong>Solution (NDDPS):</strong> A centralized, digitized national discovery platform where startups undergo DPIIT-aligned administrative moderation, are discoverable via multi-faceted real-time search, and are automatically matched with government grants using an intelligent domain-, stage-, and state-based recommendation engine.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Team Member</th>
+          <th>Designated Role</th>
+          <th>Assigned Module</th>
+          <th>Key Deliverables</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Aditya Jatav</strong></td>
+          <td>Backend &amp; API Developer</td>
+          <td><strong>Module A:</strong> Auth &amp; Admin Moderation</td>
+          <td>JWT Auth, Startup CRUD, Mongoose Schemas, Admin Verification Desk</td>
+        </tr>
+        <tr>
+          <td><strong>Arjun Kumar</strong></td>
+          <td>Frontend Functionality Developer</td>
+          <td><strong>Module B:</strong> Resource Discovery &amp; Search</td>
+          <td>Real-time SearchBar, Multi-filter Panel, Startup Cards, Pagination</td>
+        </tr>
+        <tr>
+          <td><strong>Arushi Khatri</strong></td>
+          <td>Frontend UI/UX Developer</td>
+          <td><strong>Module C:</strong> Recommendations &amp; Profiles</td>
+          <td>Detailed Startup Profile, Scheme Match % Cards, Ecosystem Landing Page</td>
+        </tr>
+        <tr>
+          <td><strong>Anushri Jain</strong></td>
+          <td>Database Developer</td>
+          <td><strong>Module D:</strong> Schemes, Mapping &amp; Analytics</td>
+          <td>12 Govt Schemes, 18 Startups, Mapping Algorithm, Analytics Aggregations</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 1: ADITYA JATAV -->
+  <div class="page-break"></div>
+  <div class="member-card">
+    <div class="member-title">MODULE A: ADITYA JATAV</div>
+    <div class="member-subtitle">Backend &amp; API Developer — Startup Registration, CRUD Engine &amp; Admin Moderation Workflow</div>
+    <p>
+      Aditya is responsible for the foundational backend infrastructure, security layer, database modeling, and regulatory compliance. He engineered the complete RESTful API suite, role-based access control, and the administrative moderation system.
+    </p>
+
+    <h3>1. Core Responsibilities &amp; Code Implementation</h3>
+    <ul>
+      <li><strong>Authentication &amp; Security:</strong> Implemented <code>POST /api/auth/register</code> and <code>POST /api/auth/login</code> using <code>bcryptjs</code> (10 salt rounds) and stateless <code>jsonwebtoken</code> (JWT with 30-day expiry).</li>
+      <li><strong>Startup Lifecycle CRUD Engine:</strong> Developed <code>POST /api/startups</code>, <code>GET /api/startups</code>, <code>GET /api/startups/:id</code>, <code>PUT /api/startups/:id</code>, and <code>DELETE /api/startups/:id</code> with query parsing for search, filters, sorting, and pagination.</li>
+      <li><strong>Mongoose Data Models:</strong> Authored <code>models/User.js</code> (with pre-save hashing) and <code>models/Startup.js</code> (storing domain, fundingStage, location, DPIIT number, verification status, and owner references).</li>
+      <li><strong>Regulatory Moderation Desk:</strong> Developed <code>GET /api/admin/startups/pending</code> and <code>PATCH /api/admin/startups/:id/verify</code> allowing DPIIT admins to approve or reject startups with official feedback remarks.</li>
+      <li><strong>Zero-Crash Fallback Architecture (utils/inMemoryStore.js):</strong> Engineered a dual-mode controller pattern ensuring that if MongoDB service is stopped during the college lab demo, all APIs and moderation function 100% seamlessly in-memory.</li>
+    </ul>
+
+    <h3>2. Module A Files Managed by Aditya</h3>
+    <p>
+      <span class="tag">backend/models/User.js</span>
+      <span class="tag">backend/models/Startup.js</span>
+      <span class="tag">backend/middleware/auth.js</span>
+      <span class="tag">backend/controllers/authController.js</span>
+      <span class="tag">backend/controllers/startupController.js</span>
+      <span class="tag">backend/controllers/adminController.js</span>
+      <span class="tag">backend/routes/auth.js</span>
+      <span class="tag">backend/routes/startups.js</span>
+      <span class="tag">backend/routes/admin.js</span>
+      <span class="tag">backend/utils/inMemoryStore.js</span>
+      <span class="tag">frontend/src/pages/AdminPage.jsx</span>
+    </p>
+
+    <h3>3. Step-by-Step Viva Demonstration Script for Aditya</h3>
+    <ol>
+      <li><strong>Admin Authentication:</strong> Go to <code>/login</code>, enter <code>admin@nddps.gov.in</code> / <code>Admin@123</code>. Show that the top navbar dynamically renders the "Admin Panel" link (Role-Based Access Control).</li>
+      <li><strong>Moderation Desk Demonstration:</strong> Click "Admin Panel" (<code>/admin</code>). Show the pending startups table. Click the startup's name or the "View" button to show that it opens the detailed profile in a new tab.</li>
+      <li><strong>Live Approval Action:</strong> Click "Approve", enter official remarks (e.g. <em>"Verified DPIIT certificate DIPP88219"</em>), and submit. The startup is instantly approved and updated across the platform.</li>
+      <li><strong>Founder Startup Registration:</strong> Log in as a startup user (<code>rahul@startupindia.com</code> / <code>Startup@123</code>), register a new startup at <code>/startup/register</code>, and demonstrate that new startups always start with status <code>Pending</code> to prevent spam.</li>
+    </ol>
+
+    <div class="pitch-box">
+      <strong>Aditya's 30-Second Viva Pitch:</strong><br>
+      "Good morning Sir/Ma'am. I am Aditya Jatav. I engineered Module A: Backend Architecture, Secure Authentication, Startup Lifecycle CRUD, and Admin Moderation. I built the Express REST APIs with bcrypt and JWT security, designed the indexed Mongoose schemas, and created the two-tier moderation workflow where new startups enter a pending queue until approved by a DPIIT administrator."
+    </div>
+
+    <h3>4. Top Viva Cross-Questions for Aditya</h3>
+    <div class="qna-box">
+      <div class="question">Q1: Why did you choose JWT over traditional Server-Side Sessions?</div>
+      <div class="answer"><strong>Ans:</strong> Server-side sessions require state storage (in memory or Redis), creating memory bottlenecks as users scale. JWT is completely stateless; the signed token carries the user ID and role, allowing instant horizontal scaling and eliminating database lookups on every request.</div>
+    </div>
+    <div class="qna-box">
+      <div class="question">Q2: How does your password hashing with bcryptjs protect against rainbow tables?</div>
+      <div class="answer"><strong>Ans:</strong> We use 10 salt rounds. Salt is random cryptographic data added to the password before hashing, meaning two identical passwords will result in completely different hashes, making precomputed rainbow tables useless.</div>
+    </div>
+    <div class="qna-box">
+      <div class="question">Q3: Why did you use PATCH instead of PUT for admin verification?</div>
+      <div class="answer"><strong>Ans:</strong> REST conventions dictate that PUT replaces the entire resource, whereas PATCH is designed for partial updates. In admin verification, we only modify <code>verificationStatus</code> and <code>adminRemarks</code> without mutating the rest of the startup profile.</div>
+    </div>
+    <div class="qna-box">
+      <div class="question">Q4: How does your system prevent crashing if the local MongoDB database is down?</div>
+      <div class="answer"><strong>Ans:</strong> I implemented a dual-mode controller pattern. On startup, Mongoose attempts connection with a 2.5s timeout. If it fails, the server toggles <code>global.useInMemory = true</code> and seamlessly routes controller operations to <code>inMemoryStore.js</code> with identical signatures.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: ARJUN KUMAR -->
+  <div class="page-break"></div>
+  <div class="member-card">
+    <div class="member-title">MODULE B: ARJUN KUMAR</div>
+    <div class="member-subtitle">Frontend Functionality Developer — Resource Discovery, Real-time Search, Multi-Filter &amp; Pagination</div>
+    <p>
+      Arjun is responsible for the core discovery experience. He built the interactive search, multi-faceted filtering sidebar, responsive startup cards grid, and pagination controls on the Discovery page.
+    </p>
+
+    <h3>1. Core Responsibilities &amp; Code Implementation</h3>
+    <ul>
+      <li><strong>Debounced Real-Time SearchBar:</strong> Built <code>SearchBar.jsx</code> with a 300ms <code>useRef</code> debounce timer. It searches across startup names, taglines, domains, and descriptions without overloading the server.</li>
+      <li><strong>Multi-Faceted Filter Panel:</strong> Built <code>FilterPanel.jsx</code> with collapsible accordion sections for Industry/Domain (FinTech, AgriTech, AI/ML, CleanTech, SaaS, etc.), Funding Stage (Bootstrapped to Series B+), State/City location, and Verification Status, with active count badges and a "Clear All Filters" button.</li>
+      <li><strong>Startup Listing Cards Grid:</strong> Built <code>StartupCard.jsx</code> showing domain color pills, verified/pending status badges, team size, headquarters, founded year, and a matched schemes counter.</li>
+      <li><strong>Pagination &amp; Sorting Controls:</strong> Built <code>PaginationAndSort.jsx</code> with dropdown sorting (Newest, Oldest, Alphabetical A-Z, Funding Stage) and dynamic pagination (Prev, Next, Page Numbers, showing "1-6 of 18").</li>
+    </ul>
+
+    <h3>2. Module B Files Managed by Arjun</h3>
+    <p>
+      <span class="tag">frontend/src/components/search/SearchBar.jsx</span>
+      <span class="tag">frontend/src/components/search/FilterPanel.jsx</span>
+      <span class="tag">frontend/src/components/search/PaginationAndSort.jsx</span>
+      <span class="tag">frontend/src/components/startup/StartupCard.jsx</span>
+      <span class="tag">frontend/src/pages/DiscoverPage.jsx</span>
+    </p>
+
+    <h3>3. Step-by-Step Viva Demonstration Script for Arjun</h3>
+    <ol>
+      <li><strong>Navigate to Discovery Page:</strong> Go to <code>http://localhost:5173/discover</code>.</li>
+      <li><strong>Test Real-Time Search:</strong> In the SearchBar, type "Pay" or "Agri". Show how the startup cards instantly filter without needing a form submit or page reload. Clear with the 'X' button.</li>
+      <li><strong>Multi-Faceted Filtering:</strong> In the left sidebar, check "FinTech" and "Pre-Seed". Show how the active filter count updates and only matching startups are displayed. Click "Clear All Filters".</li>
+      <li><strong>Sorting &amp; Pagination:</strong> Switch the Sort dropdown from "Newest First" to "Alphabetical A-Z". Observe alphabetical reordering. Click Page 2 to show dynamic pagination and count updates ("Showing 7-12 of 18").</li>
+    </ol>
+
+    <div class="pitch-box">
+      <strong>Arjun's 30-Second Viva Pitch:</strong><br>
+      "Good morning Sir/Ma'am. I am Arjun Kumar. I developed Module B: The Resource Discovery &amp; Search Engine. I built the debounced real-time SearchBar, the multi-faceted FilterPanel allowing concurrent filtering across sectors, stages, and states, the responsive StartupCard grid, and dynamic pagination controls with smooth server synchronization."
+    </div>
+
+    <h3>4. Top Viva Cross-Questions for Arjun</h3>
+    <div class="qna-box">
+      <div class="question">Q1: What is debouncing in your SearchBar, and why is it essential?</div>
+      <div class="answer"><strong>Ans:</strong> Debouncing delays the API call until the user stops typing for 300ms. Without debouncing, typing a 10-letter word would trigger 10 separate API requests to the backend, causing unnecessary network traffic and server lag.</div>
+    </div>
+    <div class="qna-box">
+      <div class="question">Q2: How do your filters synchronize with the backend query parameters?</div>
+      <div class="answer"><strong>Ans:</strong> When filter checkboxes change, <code>DiscoverPage.jsx</code> aggregates them into arrays, joins them into comma-separated strings (e.g. <code>?domain=FinTech,AgriTech&stage=Seed</code>), resets the page to 1, and calls <code>getStartups(params)</code> via Axios.</div>
+    </div>
+    <div class="qna-box">
+      <div class="question">Q3: How did you implement responsive design for the sidebar on mobile devices?</div>
+      <div class="answer"><strong>Ans:</strong> Using Tailwind CSS grid utilities: <code>grid-cols-1 lg:grid-cols-4</code>. On desktops, filters take 1 column and cards take 3 columns. On mobile screens, filters collapse behind a toggle button to preserve screen real estate.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: ARUSHI KHATRI -->
+  <div class="page-break"></div>
+  <div class="member-card">
+    <div class="member-title">MODULE C: ARUSHI KHATRI</div>
+    <div class="member-subtitle">Frontend UI/UX Developer — Recommendation Engine UI, Startup Profile UI &amp; Ecosystem Landing Page</div>
+    <p>
+      Arushi is responsible for the overall visual design system, individual startup presentation, recommendation cards displaying calculated scheme match scores, and user layout navigation.
+    </p>
+
+    <h3>1. Core Responsibilities &amp; Code Implementation</h3>
+    <ul>
+      <li><strong>Detailed Startup Profile UI:</strong> Developed <code>StartupProfilePage.jsx</code> displaying founder details, official DPIIT verification badges, location, problem &amp; solution breakdown, and funding metrics.</li>
+      <li><strong>Recommendation Cards UI:</strong> Built <code>RecommendationCard.jsx</code> and <code>RecommendationSection.jsx</code> displaying matched government schemes tailored to the startup with visual **Match Score %** tags (e.g. "100% Match", "75% Match").</li>
+      <li><strong>Ecosystem Landing Page:</strong> Designed <code>LandingPage.jsx</code> featuring animated ecosystem statistics ("20,000+ Architecture", "50+ Govt Schemes", "Pan-India Coverage"), quick domain pills, and 3-step walkthrough.</li>
+      <li><strong>Layout &amp; Startup Profile Management:</strong> Developed <code>Navbar.jsx</code>, <code>Footer.jsx</code>, and <code>EditStartupModal.jsx</code> allowing verified founders to edit their profile details in real time.</li>
+    </ul>
+
+    <h3>2. Module C Files Managed by Arushi</h3>
+    <p>
+      <span class="tag">frontend/src/pages/StartupProfilePage.jsx</span>
+      <span class="tag">frontend/src/components/recommendations/RecommendationCard.jsx</span>
+      <span class="tag">frontend/src/components/recommendations/RecommendationSection.jsx</span>
+      <span class="tag">frontend/src/pages/LandingPage.jsx</span>
+      <span class="tag">frontend/src/components/layout/Navbar.jsx</span>
+      <span class="tag">frontend/src/components/layout/Footer.jsx</span>
+      <span class="tag">frontend/src/components/startup/EditStartupModal.jsx</span>
+    </p>
+
+    <h3>3. Step-by-Step Viva Demonstration Script for Arushi</h3>
+    <ol>
+      <li><strong>Show Landing Page:</strong> Go to <code>http://localhost:5173/</code>. Highlight the hero section, the national ecosystem metrics, and click on a Domain Pill (e.g., "🌾 AgriTech") to show seamless navigation to the discovery page pre-filtered.</li>
+      <li><strong>Open Startup Profile:</strong> Click on any startup (e.g. <em>BharatAgri Intelligence</em>). Point out the DPIIT recognition badge, founder contact cards, and headquarters info.</li>
+      <li><strong>Demonstrate Recommendation Section:</strong> Scroll to "Matched Government Schemes &amp; Subsidies". Show the match percentage badges (e.g. 100% Match on SISFS and NIDHI-PRAYAS) and explain how the UI communicates eligibility to the founder.</li>
+      <li><strong>Edit Profile Modal:</strong> If logged in as the owner, click "Manage Startup Profile", change the tagline, and save to show live state updates and toast notification.</li>
+    </ol>
+
+    <div class="pitch-box">
+      <strong>Arushi's 30-Second Viva Pitch:</strong><br>
+      "Good morning Sir/Ma'am. I am Arushi Khatri. I designed Module C: The Recommendation Engine UI, Startup Profile Architecture, and Platform UX. I created the detailed startup profile view with DPIIT badges, the recommendation cards displaying algorithmic match percentage scores, the Landing Page with national startup metrics, and the profile management modals."
+    </div>
+
+    <h3>4. Top Viva Cross-Questions for Arushi</h3>
+    <div class="qna-box">
+      <div class="question">Q1: How do your recommendation cards visually indicate scheme match strength?</div>
+      <div class="answer"><strong>Ans:</strong> We use dynamic styling based on the <code>matchScore</code> prop: schemes with &gt;80% match receive emerald borders and badges (High Match), schemes between 50-80% receive amber badges, and eligible domains are displayed as tags with formatted grant limits in INR Lakhs.</div>
+    </div>
+    <div class="qna-box">
+      <div class="question">Q2: How do you handle unauthorized edits to startup profiles on the frontend?</div>
+      <div class="answer"><strong>Ans:</strong> The "Manage Startup Profile" button only renders if <code>user.role === 'admin'</code> or <code>user._id === startup.owner</code>. Furthermore, the backend endpoint <code>PUT /api/startups/:id</code> verifies ownership before committing changes.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: ANUSHRI JAIN -->
+  <div class="page-break"></div>
+  <div class="member-card">
+    <div class="member-title">MODULE D: ANUSHRI JAIN</div>
+    <div class="member-subtitle">Database Developer — Scheme &amp; Policy Modeling, Seeding, Matching Queries &amp; Analytics</div>
+    <p>
+      Anushri is responsible for data modeling of government policies and ecosystem resources, authentic data collection, algorithm queries for scheme recommendations, and MongoDB aggregation pipelines for ecosystem analytics.
+    </p>
+
+    <h3>1. Core Responsibilities &amp; Code Implementation</h3>
+    <ul>
+      <li><strong>Policy &amp; Resource Schemas:</strong> Authored <code>models/Scheme.js</code> and <code>models/Resource.js</code> storing title, ministry/body, categories (Funding/Grant, Incubation, Tax Exemption, IP Support, Mentorship), eligible domains, eligible stages, eligible states, max grant amounts, deadlines, and application links.</li>
+      <li><strong>Authentic Policy &amp; Startup Seeding:</strong> Created <code>seed/seedData.js</code> containing 12+ real Indian government schemes (Startup India Seed Fund, NIDHI-PRAYAS, MeitY TIDE 2.0, iStart Rajasthan, SIDBI Fund of Funds, BIRAC BIG Grant, Atal Innovation Mission, Mudra Yojana) and 18+ realistic startups across Jaipur, Bengaluru, Mumbai, Delhi, Hyderabad, and Pune.</li>
+      <li><strong>Scheme Matching Algorithm:</strong> Implemented <code>controllers/schemeMappingController.js</code> (<code>GET /api/schemes/map/:startupId</code>). The algorithm matches eligible schemes and computes a dynamic match percentage:
+        <div class="code-block">
+Domain Match: +40% | Stage Match: +35% | State Match: +25% | Total = Up to 100%
+        </div>
+      </li>
+      <li><strong>Analytics Aggregation Engine:</strong> Developed <code>controllers/analyticsController.js</code> (<code>GET /api/analytics/overview</code>) using MongoDB aggregation pipelines (<code>$group</code>, <code>$sum</code>) and fallback aggregation for real-time distribution charts by domain, state, stage, and status.</li>
+    </ul>
+
+    <h3>2. Module D Files Managed by Anushri</h3>
+    <p>
+      <span class="tag">backend/models/Scheme.js</span>
+      <span class="tag">backend/models/Resource.js</span>
+      <span class="tag">backend/seed/seedData.js</span>
+      <span class="tag">backend/seed/runSeed.js</span>
+      <span class="tag">backend/controllers/schemeController.js</span>
+      <span class="tag">backend/controllers/schemeMappingController.js</span>
+      <span class="tag">backend/controllers/analyticsController.js</span>
+      <span class="tag">frontend/src/pages/SchemesPage.jsx</span>
+      <span class="tag">frontend/src/pages/AnalyticsPage.jsx</span>
+    </p>
+
+    <h3>3. Step-by-Step Viva Demonstration Script for Anushri</h3>
+    <ol>
+      <li><strong>Schemes Catalog:</strong> Navigate to <code>/schemes</code>. Show the 12 authentic government schemes with ministry logos, max grant amounts (e.g. ₹50 Lakhs for SISFS, ₹10 Lakhs for NIDHI-PRAYAS), and filter by category (Funding/Grant, Incubation, Tax Exemption).</li>
+      <li><strong>Scheme Mapping Logic:</strong> Show the matching query in action on <code>/startup/:id</code> or via <code>GET /api/schemes/map/:startupId</code>. Explain how a FinTech startup in Rajasthan gets high match scores on both central schemes (SISFS) and state schemes (iStart Rajasthan).</li>
+      <li><strong>Analytics Overview:</strong> Navigate to <code>/analytics</code>. Present the live horizontal bar charts displaying distribution of startups by Domain (FinTech, AgriTech, SaaS), by Location (Rajasthan, Karnataka, Maharashtra), by Stage, and by Verification Status.</li>
+    </ol>
+
+    <div class="pitch-box">
+      <strong>Anushri's 30-Second Viva Pitch:</strong><br>
+      "Good morning Sir/Ma'am. I am Anushri Jain. I developed Module D: Scheme &amp; Policy Data Modeling, Ecosystem Seeding, Recommendation Mapping Queries, and Analytics Aggregation. I modeled 12 authentic Indian government schemes, engineered the multi-criteria matching algorithm (+40% domain, +35% stage, +25% state), and built aggregation queries providing real-time ecosystem intelligence."
+    </div>
+
+    <h3>4. Top Viva Cross-Questions for Anushri</h3>
+    <div class="qna-box">
+      <div class="question">Q1: How does your scheme mapping algorithm calculate match scores?</div>
+      <div class="answer"><strong>Ans:</strong> The algorithm queries schemes where <code>eligibleDomains</code> includes the startup's domain and <code>eligibleStages</code> includes the startup's stage. Domain match awards +40 points, stage match awards +35 points, and state match awards +25 points (maximum 100 points). Schemes are sorted in descending order of match percentage.</div>
+    </div>
+    <div class="qna-box">
+      <div class="question">Q2: How does the analytics aggregation pipeline work in MongoDB?</div>
+      <div class="answer"><strong>Ans:</strong> We use MongoDB aggregation pipelines with <code>$group: { _id: "$domain", count: { $sum: 1 } }</code> to compute distributions on the database server directly, minimizing network payload compared to fetching all documents to the application layer.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: MASTER VIVA REFERENCE -->
+  <div class="page-break"></div>
+  <h2>5. Master Viva Reference &amp; Technical Defense Cheat Sheet</h2>
+
+  <h3>1. Technology Stack Summary</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Layer</th>
+        <th>Technologies Used</th>
+        <th>Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Frontend</strong></td>
+        <td>React.js 18/19, Vite 6, Tailwind CSS, Lucide Icons, React Router v6</td>
+        <td>Single Page Application (SPA), responsive UI, client-side routing</td>
+      </tr>
+      <tr>
+        <td><strong>Backend</strong></td>
+        <td>Node.js, Express.js 4.21</td>
+        <td>RESTful API micro-architecture, middleware pipeline</td>
+      </tr>
+      <tr>
+        <td><strong>Database</strong></td>
+        <td>MongoDB &amp; Mongoose 8.7 (with In-Memory Store Fallback)</td>
+        <td>Object Data Modeling, indexing, aggregation queries</td>
+      </tr>
+      <tr>
+        <td><strong>Security</strong></td>
+        <td>jsonwebtoken (JWT), bcryptjs (10 salt rounds), CORS</td>
+        <td>Stateless authentication, password hashing, origin security</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>2. Demo Credentials for Viva</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Permitted Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Admin (DPIIT Moderator)</strong></td>
+        <td><code>admin@nddps.gov.in</code></td>
+        <td><code>Admin@123</code></td>
+        <td>Access <code>/admin</code>, Review pending startups, Approve/Reject with remarks</td>
+      </tr>
+      <tr>
+        <td><strong>Startup Founder</strong></td>
+        <td><code>rahul@startupindia.com</code></td>
+        <td><code>Startup@123</code></td>
+        <td>Access <code>/dashboard</code>, Register startups, manage own profile</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>3. Key HTTP Status Codes Used in Project</h3>
+  <ul>
+    <li><code>200 OK</code>: Successful query retrieval, profile update, or admin approval.</li>
+    <li><code>201 Created</code>: User account successfully registered or startup profile created.</li>
+    <li><code>400 Bad Request</code>: Missing required fields or duplicate email on registration.</li>
+    <li><code>401 Unauthorized</code>: Missing, invalid, or expired JWT Bearer token.</li>
+    <li><code>403 Forbidden</code>: Non-admin user attempting to access administrative verification endpoints.</li>
+    <li><code>404 Not Found</code>: Requested startup or scheme ID does not exist in database.</li>
+    <li><code>500 Internal Server Error</code>: Unhandled server-side exception.</li>
+  </ul>
+
+  <h3>4. General Tips for Viva Evaluation</h3>
+  <ul>
+    <li><strong>Speak with authority on your assigned module:</strong> Start with your 30-second elevator pitch when asked what you did.</li>
+    <li><strong>Keep the browser open:</strong> Have <code>http://localhost:5173</code> running in one tab and <code>http://localhost:5173/admin</code> in another tab for instant demonstration.</li>
+    <li><strong>Emphasize the Fallback Store:</strong> Mention how the architecture is resilient—even if MongoDB service is stopped in the lab, the in-memory fallback prevents any crashes.</li>
+  </ul>
+
+  <div style="text-align:center; margin-top:20px; font-size:9pt; color:#64748b;">
+    © 2026-27 Team NDDPS | Project ID: 2026-27-WD-04 | National Digitized Discovery Platform for Startup
+  </div>
+
+</body>
+</html>
